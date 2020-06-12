@@ -1,0 +1,533 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.main
+{
+
+width:50%;
+height:20%;
+padding:250px;
+}
+.mainpage
+{
+background-image:url("bgimgofferpage.jpg");
+background-size:cover;
+font-weight:bold;
+
+}
+img
+{
+width:50%;
+height:20%;
+
+
+}
+.form
+{
+
+padding:250px;
+margin-top:5px;
+border-radius:10px solid black;
+}
+
+.grid
+{
+display:grid;
+grid-template-columns:200px;
+grid-template-rows:40px;
+
+padding:0px;
+grid-gap:10px;
+
+}
+.grid >div
+{
+display:grid;
+color:green;
+font-weight:bold;
+grid-gap:10px;
+padding:0px;
+}
+
+.grid1
+{
+display:grid;
+
+grid-template-columns:50px 50px 50px 50px ;
+grid-template-rows:40px;
+grid-gap:10px;
+}
+.grid1 >div
+
+{
+display:grid;
+padding:5px;
+color:orange;
+grid-gap:10px;
+}
+.grid2
+{
+display:grid;
+
+grid-template-columns:200px  ;
+grid-template-rows:80px 80px 80px ;
+grid-gap:10px;
+
+}
+.grid2>div
+
+{
+display:grid;
+color:orange;
+grid-gap:10px;
+}
+.grid3 >div
+
+{
+
+display:grid;
+color:orange;
+grid-gap:10px;
+}
+.grid3
+{
+display:grid;
+
+grid-template-columns:200px 200px ;
+grid-template-rows:80px;
+grid-gap:10px;
+}
+.grid4 >div
+
+{
+
+display:grid;
+color:orange;
+grid-gap:10px;
+}
+.grid4
+{
+display:grid;
+
+grid-template-columns:300px 400px ;
+grid-template-rows:100px 100px;
+grid-gap:10px;
+}
+.grid5 >div
+
+{
+
+display:grid;
+color:orange;
+grid-gap:10px;
+}
+.grid5
+{
+display:grid;
+
+grid-template-columns:300px  ;
+
+grid-gap:10px;
+}
+.grid6 >div
+
+{
+
+display:grid;
+color:orange;
+grid-gap:10px;
+}
+.grid6
+{
+display:grid;
+
+grid-template-columns:300px ;
+grid-template-rows:30px 30px 30px ;
+
+grid-gap:10px;
+}
+
+
+
+
+
+</style>
+</head>
+ <body>
+<script>
+function formValidation()
+{
+var uname=document.getElementById("f").value;
+var mname=document.getElementById("m").value;
+
+var lname=document.getElementById("name").value;
+
+var l=document.getElementById("mm").value;
+var num=document.getElementById("tel").value;
+var z=document.getElementById("zip").value;
+var a=document.getElementById("add").value;
+var dates=document.getElementById("date").value;
+var m=document.getElementById("mgender");
+var f=document.getElementById("fgender");
+var o=document.getElementById("ogender");
+var r=document.getElementById("rest");
+var index=r.options[r.selectedIndex].value;
+var l=document.getElementById("loc");
+var i=l.options[l.selectedIndex].value;
+var c=document.getElementById("cc");
+if(checkDate(dates))
+{
+
+
+if(add(a))
+{
+
+if(checkBox(c))
+{
+
+if (dropdownL(index))
+{
+
+if(number(num))
+{
+
+
+
+if(first(uname))
+{
+if(middle(mname))
+{
+
+if(last(lname))
+{
+if(checkRadio(m,f,o))
+{
+
+
+
+
+
+if(Zip(z))
+{
+
+
+if (dropdownLr(i))
+{
+
+
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+return false;
+
+}
+
+
+function first(uname)
+{ 
+var letters = /^[A-Za-z]+$/;
+
+if(uname.match(letters))
+{
+return true;
+}
+else
+{
+alert('Firstname must have alphabet characters only');
+
+return false;
+}
+}
+function middle(mname)
+{ 
+var letters = /^[A-Za-z]+$/;
+
+if(mname.match(letters))
+{
+return true;
+}
+else
+{
+alert('Middlename must have alphabet characters only');
+
+return false;
+}
+}
+function last(lname)
+{ 
+var letters = /^[A-Za-z]+$/;
+
+if(lname.match(letters))
+{
+return true;
+}
+else
+{
+alert('Lastname must have alphabet characters only');
+
+return false;
+}
+}
+
+
+
+function number(num)
+{
+var letters=/^[0-9]/;
+if(num.match(letters)&&num.length<11)
+{
+return true;
+}
+else
+{
+alert('Telephone no  have numbers only and length is 10');
+
+return false;
+}
+
+}
+
+function Zip(z)
+{
+if(z.length<7)
+{
+return true;
+}
+else
+
+{
+alert('zip code have 6 numbers only');
+}
+}
+function add(a)
+{
+if(a.length==0)
+{
+alert("Enter address");
+return false;
+}
+
+
+}
+function checkDate(dates)
+{
+var bs=/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+if(dates.match(bs))
+{
+return true;
+}
+else
+{
+alert("Enter valid Date");
+return false;
+}
+}
+function checkRadio(m,f,o)
+{
+x=0;
+if(m.checked)
+{
+x++;
+}
+if(f.checked)
+{
+x++;
+}
+if(o.checked)
+{
+x++;
+}
+if(x==0)
+{
+alert("select gender");
+return false;
+}
+}
+
+function mailid(l)
+{
+var lt=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ if (l.match(lt))
+  {
+    return (true);
+  }
+else
+{
+    alert("You have entered an invalid email address!");
+    return (false);
+}
+
+}
+function dropdownL(index)
+{
+if(index==0)
+{
+alert("select city from dropdown list");
+return false;
+}
+
+}
+function dropdownLr(i)
+{
+if(i==0)
+{
+alert("select restaurent location");
+return false;
+}
+
+}
+function checkBox(c)
+{
+if(c.checked==false)
+{
+alert("select which type of pizza you want from checkbox");
+return false;
+}
+
+}
+function myfunction()
+{
+document.write("You are very good cusomer.Thank you ");
+
+
+}
+
+
+</script>	
+
+
+   
+
+
+
+<div class="main">
+<div class="mainpage">
+<div class="form">
+<h1>Order form</h1>
+<div class="grid">
+
+<div class="item">your first  name:<input type="text" placeholder="Enter Your first name" name="name" id="f" ></div>
+<div class="item">your middle name:<input type="text" placeholder="Enter your middle name" name="email" id="m" ></div>
+<div class="item">your Last name: <input type="text" placeholder="Enter your last name" id="name" ></div>
+</div>
+<br>
+
+<div class="grid1">
+
+<div class="gender">Gender</div>
+ <div class="item">Male<input type="radio" id="mgender" value="male" > </div>
+  <div class="item">Female<input type="radio" id="fgender" value="female"> </div>
+  <div class="item">Other<input type="radio" id="ogender" value="other"> </div>
+
+</div> 
+<br>
+<div class="grid2">
+
+
+<div class="item"> contact no<input type="text" placeholder="Enter your contact no" name="telephone" id="tel" ></div>
+<div class="item">email id<input type="text" placeholder="Enter your email id" name="mail"  id="mm"></div>
+
+<div class="item">select your city
+
+<select id="rest">
+
+  <option value="0">select</option>
+  <option value="kalyan">kalyan</option>
+  <option value="murbad">murbad</option>
+  <option value="bandra">bandra</option>
+  <option value="andheri">andheri</option>
+</select>
+</div>  
+<div class="item"> your Zip code: <input type="text" placeholder="Enter your Zip code" name="zip" id="zip" ></div>
+ 
+</div>
+<br>
+<div class="grid3">
+
+
+
+<h1><font size="3px">Please select order Type.</font></h1>
+<br>
+ <div class="item">Picked Up<input type="radio" name="p" value="p" ></div>
+  <div class="item">Delivery<input type="radio" name="d" value="d"></div>
+  <div class="item">Catering<input type="radio" name="c" value="c"></div>
+<div class="item">Catering<input type="radio" name="c" value="c"></div>
+</div>
+<div class="grid4">
+
+
+<h1><font size="3px">which type of pizza you want?</font></h1>
+<br>
+<div class="item"> Margherita<input type="checkbox" name="Margherita" value="Bike" id="cc"></div> 
+ 
+<div class="item"> Vegetarian <input type="checkbox" name="Vegetarian Pizza" value="Car" id="cc"></div>
+
+<div class="item">  Pepperoni<input type="checkbox" name="Pepperoni" value="Boat" id="cc"></div> 
+ 
+<div class="item">  combination<input type="checkbox" name="combination" value="Boat" id="cc"> </div>
+
+</div>
+<br>
+<div class="grid6">
+
+<div class="item">Restaurent  location </div>
+ 
+ <select id="loc">
+  <option value="0">select</option>
+  <option value="kalyan">kalyan</option>
+  <option value="murbad">murbad</option>
+  <option value="bandra">bandra</option>
+  <option value="andheri">andheri</option>
+
+</select>
+
+<div class="item">Quantity<input type="number"   min="1" max="10"  ></div><br>
+<div class="item">Address:<input type="text" placeholder="Enter your address" id="add" ></div>
+
+
+<div>Choose a pizza sauce:
+<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+
+<datalist id="ice-cream-flavors">
+    <option value="Chocolate">
+    <option value="Coconut">
+    <option value="Mint">
+    <option value="Strawberry">
+    <option value="Vanilla">
+</datalist>
+ </div>
+<div class="item"><h2><font color="orange">List of offers.</font> </h2></div>
+<div>
+<ol><font color="green"
+  <li> <li>1 Order</li>
+  <li>2 Order</li>
+  <li>3 Order</li></font>
+</ol> 
+</div>
+<div class="item">Date<input type="text" placeholder="DD-MM-yyyy"  name="Date" id="date"  required></div>
+</div>
+<br>
+    <div><button type="submit"  width="80" height="10" id="submit" onclick="formValidation()">Place order</button><br><br></div>
+	<div><button type="submit" id="c" onclick="myfunction()">Click here</div>
+<a href="file:///C:/Users/Administrator/Desktop/my_website/offerpage.html"><button type="submit"  width="80" height="10" id="submit">Back</button></a>
+
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+

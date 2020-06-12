@@ -1,0 +1,241 @@
+<html>
+<head>
+<style>
+
+.b1
+{
+background-image:url("e7i.jpg");
+width:1350px;
+height:1000px;
+background-size:cover;
+
+}
+
+.form input[type=text]
+{
+font-size:20px;
+font-weight:20px;
+
+
+}
+.name 
+{
+font-size:20px;
+margin-top:105px;
+margin 0 auto;
+}
+
+.register input[type=text]
+{
+background:transparent;
+font-weight:30px;
+font-size:25px;
+background-color:white;
+}
+.grid
+{
+margin-left:20%;
+padding:40px;
+display:grid;
+grid-template-columns:40% 50%;
+}
+.tabel
+{
+display:grid;
+width:93%;
+grid-template-columns:20% 20% 20% 20%;
+grid-template-row:20%;
+font-size:30px;
+color:green;
+margin-left:10%;
+border:10px solid black;;
+padding:20px;
+background:transparent;
+background-image:url("i2.jpg");
+}
+
+</style>
+</head>
+<body onload="funload()">
+<script>
+function funload()
+{
+alert("wait page is running");
+
+}
+
+if (v1.true)
+{
+alert("please register");
+}
+else
+{
+alert("please  not register")
+}
+function func()
+{
+var v=confirm("do you want to submit");
+if(v==true)
+{
+window.open("file:///C:/Users/Administrator/Desktop/my_website/exp7.html");
+}
+else
+{
+document.write("cancel");
+}
+}
+function reset()
+{
+
+onreset;
+
+}
+ function myfun()
+{
+
+alert("Thank you for filling name");
+}
+ function fundown()
+{
+var v1=document.getElementById("t1");
+v1.style.color="red";
+
+}
+ function fundown1()
+{
+var v=document.getElementById("t1");
+v.style.color="pink";
+
+}
+ function fundown2()
+{
+var v1=document.getElementById("t2");
+v1.style.color="red";
+
+}
+ function fundownt2()
+{
+var v=document.getElementById("t2");
+v.style.color="pink";
+
+}
+ function fundown3()
+{
+var v1=document.getElementById("t3");
+v1.style.color="red";
+
+}
+ function fundownt3()
+{
+var v=document.getElementById("t3");
+v.style.color="pink";
+
+}
+ function fundown4()
+{
+var v1=document.getElementById("t4");
+v1.style.color="red";
+
+}
+ function fundownt4()
+{
+var v=document.getElementById("t4");
+v.style.color="pink";
+
+}
+
+
+function funpro()
+{
+
+var v=prompt("you have to change password");
+
+
+}
+function myon() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+</script>
+
+<div class="b1" onmouseover="document.bgColor='green'">
+<br>
+<br>
+<div class="menu" >
+<div class="tabel"  >
+<div  id="t1" onmousedown="fundown()" onmouseup="fundown1()" img src="logoshop.png">Home</div>
+<div id="t2" onmousedown="fundown2()" onmouseup="fundownt2()">About</div>
+<div id="t3" onmousedown="fundown3()" onmouseup="fundownt3()">Offers</div>
+<div id="t4" onmousedown="fundown4()" onmouseup="fundownt4()">Contact</div>
+</tabel>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="grid">
+<div>
+<div class="form">
+<div class="name"><h1><font color="pink">sign In</font></h1></div>
+<input type="text" name="Username" placeholder="Username">
+<br>
+<br>
+<input type="password" name="password" placeholder="password">
+<br>
+<br>
+<table>
+<tr>
+<td>
+<input type="button" value="submit" onclick="func()"></td>
+<td><input type="button" value="changepassword" onclick="funpro()"></td>
+</table>
+</div>
+</div>
+<div>
+<div class="register">
+<div class="block">
+<form>
+<h1><font color="pink">Register</font></h1>
+<input type="text" name="Username" placeholder="name" onblur="myfun()">
+<br>
+<br>
+<input type="text" name="password" placeholder="contact no" onfocus>
+<br>
+<br>
+<input type="text" name="Username" placeholder="mail id">
+<br>
+<br>
+<input type="text" name="password" placeholder="address">
+<br>
+<br>
+<table>
+<tr>
+<td>
+<input type="button" value="submit" onclick="func()">
+</td>
+<td>
+<input type="button" value="Reset" onclick="reset()">
+</td>
+
+</select>
+</table>
+</form>
+<h1><font color="pink">Give me feedback</font></h1>
+<select id="mySelect" onchange="myon()">
+  <option value="EXcellent">excellent</option>
+  <option value="Good">good</option>
+  <option value="Normal">normal</option>
+ </select>
+<p id="demo"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
