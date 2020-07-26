@@ -77,7 +77,7 @@ function func()
 var v=confirm("do you want to submit");
 if(v==true)
 {
-window.open("file:///C:/Users/Administrator/Desktop/my_website/exp7.html");
+window.open("exp7.html");
 }
 else
 {
@@ -97,9 +97,8 @@ alert("Thank you for filling name");
 }
  function fundown()
 {
-var v1=document.getElementById("t1");
-v1.style.color="red";
-
+  var v=document.getElementById("t1");
+v.style.color="red";
 }
  function fundown1()
 {
@@ -115,14 +114,12 @@ v1.style.color="red";
 }
  function fundownt2()
 {
-var v=document.getElementById("t2");
-v.style.color="pink";
+window.open("grid.html");
 
 }
  function fundown3()
 {
-var v1=document.getElementById("t3");
-v1.style.color="red";
+window.open("offerpage.html");
 
 }
  function fundownt3()
@@ -133,8 +130,8 @@ v.style.color="pink";
 }
  function fundown4()
 {
-var v1=document.getElementById("t4");
-v1.style.color="red";
+
+  window.open("wplayoutcontactpage.html");
 
 }
  function fundownt4()
@@ -163,7 +160,7 @@ function myon() {
 <br>
 <div class="menu" >
 <div class="tabel"  >
-<div  id="t1" onmousedown="fundown()" onmouseup="fundown1()" img src="logoshop.png">Home</div>
+<div  id="t1" onmousedown="fundown()" onmouseup="fundown1()" >Home</div>
 <div id="t2" onmousedown="fundown2()" onmouseup="fundownt2()">About</div>
 <div id="t3" onmousedown="fundown3()" onmouseup="fundownt3()">Offers</div>
 <div id="t4" onmousedown="fundown4()" onmouseup="fundownt4()">Contact</div>

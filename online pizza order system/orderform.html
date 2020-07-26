@@ -158,251 +158,305 @@ grid-gap:10px;
 </head>
  <body>
 <script>
-function formValidation()
-{
-var uname=document.getElementById("f").value;
-var mname=document.getElementById("m").value;
-
-var lname=document.getElementById("name").value;
-
-var l=document.getElementById("mm").value;
-var num=document.getElementById("tel").value;
-var z=document.getElementById("zip").value;
-var a=document.getElementById("add").value;
-var dates=document.getElementById("date").value;
-var m=document.getElementById("mgender");
-var f=document.getElementById("fgender");
-var o=document.getElementById("ogender");
-var r=document.getElementById("rest");
-var index=r.options[r.selectedIndex].value;
-var l=document.getElementById("loc");
-var i=l.options[l.selectedIndex].value;
-var c=document.getElementById("cc");
-if(checkDate(dates))
-{
-
-
-if(add(a))
-{
-
-if(checkBox(c))
-{
-
-if (dropdownL(index))
-{
-
-if(number(num))
-{
-
-
-
-if(first(uname))
-{
-if(middle(mname))
-{
-
-if(last(lname))
-{
-if(checkRadio(m,f,o))
-{
-
-
-
-
-
-if(Zip(z))
-{
-
-
-if (dropdownLr(i))
-{
-
-
-}
-}
-}
-}
-}
-}
-}
-}
-}
-}
-}
-return false;
-
-}
-
-
-function first(uname)
-{ 
-var letters = /^[A-Za-z]+$/;
-
-if(uname.match(letters))
-{
-return true;
-}
-else
-{
-alert('Firstname must have alphabet characters only');
-
-return false;
-}
-}
-function middle(mname)
-{ 
-var letters = /^[A-Za-z]+$/;
-
-if(mname.match(letters))
-{
-return true;
-}
-else
-{
-alert('Middlename must have alphabet characters only');
-
-return false;
-}
-}
-function last(lname)
-{ 
-var letters = /^[A-Za-z]+$/;
-
-if(lname.match(letters))
-{
-return true;
-}
-else
-{
-alert('Lastname must have alphabet characters only');
-
-return false;
-}
-}
-
-
-
-function number(num)
-{
-var letters=/^[0-9]/;
-if(num.match(letters)&&num.length<11)
-{
-return true;
-}
-else
-{
-alert('Telephone no  have numbers only and length is 10');
-
-return false;
-}
-
-}
-
-function Zip(z)
-{
-if(z.length<7)
-{
-return true;
-}
-else
-
-{
-alert('zip code have 6 numbers only');
-}
-}
-function add(a)
-{
-if(a.length==0)
-{
-alert("Enter address");
-return false;
-}
-
-
-}
-function checkDate(dates)
-{
-var bs=/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
-if(dates.match(bs))
-{
-return true;
-}
-else
-{
-alert("Enter valid Date");
-return false;
-}
-}
-function checkRadio(m,f,o)
-{
-x=0;
-if(m.checked)
-{
-x++;
-}
-if(f.checked)
-{
-x++;
-}
-if(o.checked)
-{
-x++;
-}
-if(x==0)
-{
-alert("select gender");
-return false;
-}
-}
-
-function mailid(l)
-{
-var lt=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
- if (l.match(lt))
+  function formValidation()
   {
-    return (true);
+    var firstnamev=document.getElementById("f").value;
+    var middlenamev=document.getElementById("m").value;
+    var lastnamev=document.getElementById("name").value;
+  var contact=document.getElementById("tel").value;
+  var no=/^\d{10}$/;
+    if(firstnamev == "")
+  {
+alert(" First Name is required.");
+return false;
   }
-else
-{
-    alert("You have entered an invalid email address!");
-    return (false);
-}
-
-}
-function dropdownL(index)
-{
-if(index==0)
-{
-alert("select city from dropdown list");
-return false;
-}
-
-}
-function dropdownLr(i)
-{
-if(i==0)
-{
-alert("select restaurent location");
-return false;
-}
-
-}
-function checkBox(c)
-{
-if(c.checked==false)
-{
-alert("select which type of pizza you want from checkbox");
-return false;
-}
-
-}
-function myfunction()
-{
-document.write("You are very good cusomer.Thank you ");
+  else if(middlenamev == "")
+   {
+ alert(" MiddleName is required.");
+ return false;
+   }
+   else if(lastnamev == "")
+   {
+    alert(" LastName is required.");
+ return false;
+   }
+  
+   else if(contact.match(no))
+ {
+   return true
+ }
+ else{
+  alert(" contact is  not valid.");
+ return false; 
+ }
+ 
 
 
-}
+  // }
+  // function mn(middlenamev)
+  // {
+  
+  //  }
+//   else if(lasttnamev == "")
+//   {
+// alert("Last Name is required.");
+//   }
+  // var firstnamev=document.forms["f"];
+  // console.log(firstnamev);
+  // function formValidation()
+  // {
+  //   if(firstnamev.value == " ")
+  //   {
+  //     alert('First name is required.');
+  //     firstnamev.focus();
+  //     return false;
+  //   }
+  // }
+// function formValidation()
+// {
+// var uname=document.getElementById("f").value;
+// var mname=document.getElementById("m").value;
 
+// var lname=document.getElementById("name").value;
+
+// var l=document.getElementById("mm").value;
+// var num=document.getElementById("tel").value;
+// var z=document.getElementById("zip").value;
+// var a=document.getElementById("add").value;
+// var dates=document.getElementById("date").value;
+// var m=document.getElementById("mgender");
+// var f=document.getElementById("fgender");
+// var o=document.getElementById("ogender");
+// var r=document.getElementById("rest");
+// var index=r.options[r.selectedIndex].value;
+// var l=document.getElementById("loc");
+// var i=l.options[l.selectedIndex].value;
+// var c=document.getElementById("cc");
+// if(checkDate(dates))
+// {
+
+
+// if(add(a))
+// {
+
+// if(checkBox(c))
+// {
+
+// if (dropdownL(index))
+// {
+
+// if(number(num))
+// {
+
+
+
+// if(first(uname))
+// {
+// if(middle(mname))
+// {
+
+// if(last(lname))
+// {
+// if(checkRadio(m,f,o))
+// {
+
+
+
+
+
+// if(Zip(z))
+// {
+
+
+// if (dropdownLr(i))
+// {
+
+
+// }
+// }
+// }
+// }
+// }
+// }
+// }
+// }
+// }
+// }
+// }
+// return false;
+
+// }
+
+
+// function first(uname)
+// { 
+// var letters = /^[A-Za-z]+$/;
+
+// if(uname.match(letters))
+// {
+// return true;
+// }
+// else
+// {
+// alert('Firstname must have alphabet characters only');
+
+// return false;
+// }
+// }
+// function middle(mname)
+// { 
+// var letters = /^[A-Za-z]+$/;
+
+// if(mname.match(letters))
+// {
+// return true;
+// }
+// else
+// {
+// alert('Middlename must have alphabet characters only');
+
+// return false;
+// }
+// }
+// function last(lname)
+// { 
+// var letters = /^[A-Za-z]+$/;
+
+// if(lname.match(letters))
+// {
+// return true;
+// }
+// else
+// {
+// alert('Lastname must have alphabet characters only');
+
+// return false;
+// }
+// }
+
+
+
+// function number(num)
+// {
+// var letters=/^[0-9]/;
+// if(num.match(letters)&&num.length<11)
+// {
+// return true;
+// }
+// else
+// {
+// alert('Telephone no  have numbers only and length is 10');
+
+// return false;
+// }
+
+// }
+
+// function Zip(z)
+// {
+// if(z.length<7)
+// {
+// return true;
+// }
+// else
+
+// {
+// alert('zip code have 6 numbers only');
+// }
+// }
+// function add(a)
+// {
+// if(a.length==0)
+// {
+// alert("Enter address");
+// return false;
+// }
+
+
+// }
+// function checkDate(dates)
+// {
+// var bs=/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+// if(dates.match(bs))
+// {
+// return true;
+// }
+// else
+// {
+// alert("Enter valid Date");
+// return false;
+// }
+// }
+// function checkRadio(m,f,o)
+// {
+// x=0;
+// if(m.checked)
+// {
+// x++;
+// }
+// if(f.checked)
+// {
+// x++;
+// }
+// if(o.checked)
+// {
+// x++;
+// }
+// if(x==0)
+// {
+// alert("select gender");
+// return false;
+// }
+// }
+
+// function mailid(l)
+// {
+// var lt=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//  if (l.match(lt))
+//   {
+//     return (true);
+//   }
+// else
+// {
+//     alert("You have entered an invalid email address!");
+//     return (false);
+// }
+
+// }
+// function dropdownL(index)
+// {
+// if(index==0)
+// {
+// alert("select city from dropdown list");
+// return false;
+// }
+
+// }
+// function dropdownLr(i)
+// {
+// if(i==0)
+// {
+// alert("select restaurent location");
+// return false;
+// }
+
+// }
+// function checkBox(c)
+// {
+// if(c.checked==false)
+// {
+// alert("select which type of pizza you want from checkbox");
+// return false;
+// }
+
+// }
+// function myfunction()
+// {
+// document.write("You are very good cusomer.Thank you ");
+
+
+// }
+  }
 
 </script>	
 
@@ -520,7 +574,7 @@ document.write("You are very good cusomer.Thank you ");
 <br>
     <div><button type="submit"  width="80" height="10" id="submit" onclick="formValidation()">Place order</button><br><br></div>
 	<div><button type="submit" id="c" onclick="myfunction()">Click here</div>
-<a href="file:///C:/Users/Administrator/Desktop/my_website/offerpage.html"><button type="submit"  width="80" height="10" id="submit">Back</button></a>
+<a href="grid.html"><button type="submit"  width="80" height="10" id="submit">Back</button></a>
 
   </form>
 </div>
